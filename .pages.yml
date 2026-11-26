@@ -1,0 +1,251 @@
+media:
+  - name: images
+    label: Images
+    input: media
+    output: /media
+    rename: safe
+    extensions: [avif, jpg, jpeg, png, webp]
+  - name: project_documents
+    label: Project documents
+    input: documents
+    output: /documents
+    rename: safe
+    extensions: [pdf]
+
+components:
+  image:
+    type: object
+    fields:
+      - { name: src, label: Image, type: image, options: { media: images } }
+      - { name: alt, label: Alternative text, type: string }
+      - { name: caption, label: Caption, type: string }
+  slug:
+    type: string
+    required: true
+    description: Lowercase letters, numbers, and single hyphens. Keep the slug stable after publishing.
+    pattern: '^[a-z0-9]+(-[a-z0-9]+)*$'
+  httpsLink:
+    type: string
+    pattern: '^https://[^\s]+$'
+  order:
+    type: number
+    default: 100
+    description: Lower numbers appear first.
+  displayTitle:
+    type: string
+    required: true
+  summary:
+    type: text
+    required: true
+
+content:
+  - name: site
+    label: Navigation, profiles and contact
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: name, label: Name, component: displayTitle }
+      - { name: location, label: Location, type: string }
+      - { name: email, label: Contact email, type: string, required: true }
+      - { name: contactHeading, label: Contact footer heading, type: string }
+      - { name: contactDescription, label: Contact footer introduction, type: text }
+      - { name: description, label: Search description, component: summary }
+      - { name: socialImage, label: Social preview image, component: image }
+      - name: navigation
+        label: Navigation labels
+        type: object
+        fields:
+          - { name: home, label: Home, component: displayTitle }
+          - { name: about, label: About, component: displayTitle }
+          - { name: projects, label: Projects, component: displayTitle }
+          - { name: skills, label: Skills, component: displayTitle }
+          - { name: writing, label: Writing label throughout the site, component: displayTitle }
+          - { name: contact, label: Contact, component: displayTitle }
+      - name: profiles
+        label: Public profile links
+        type: object
+        fields:
+          - { name: linkedin, label: LinkedIn, component: httpsLink }
+          - { name: github, label: GitHub, component: httpsLink }
+          - { name: naukri, label: Naukri, component: httpsLink }
+          - { name: workAtAStartup, label: Y Combinator Work at a Startup, component: httpsLink }
+          - name: additional
+            label: Additional profiles
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Platform name, component: displayTitle }
+              - { name: url, label: Public profile URL, component: httpsLink, required: true }
+  - name: home
+    label: Homepage
+    type: file
+    path: content/home.json
+    format: json
+    fields:
+      - { name: headline, label: Main heading, component: displayTitle }
+      - { name: introduction, label: Introduction, component: summary }
+      - { name: heroImage, label: Optional hero image, component: image }
+      - { name: showProjects, label: Show projects on the homepage, type: boolean, default: true }
+      - { name: projectsTitle, label: Featured projects heading, component: displayTitle }
+      - { name: projectsDescription, label: Featured projects introduction, type: text }
+      - { name: showMoreProjects, label: Show more projects below featured projects, type: boolean, default: true }
+      - { name: moreProjectsTitle, label: More projects heading, type: string }
+      - { name: showLinkedIn, label: Show published LinkedIn posts, type: boolean, default: true }
+      - { name: linkedinTitle, label: LinkedIn section heading, type: string }
+  - name: about
+    label: About, education and certifications
+    type: file
+    path: content/about.json
+    format: json
+    fields:
+      - { name: title, label: Page heading, component: displayTitle }
+      - { name: introduction, label: Biography, type: text }
+      - { name: direction, label: Project background, type: text }
+      - { name: learning, label: How I’m learning, type: text }
+      - { name: nextSteps, label: What I’m building next, type: text }
+      - { name: roles, label: Roles I’m looking for, type: text }
+      - { name: portrait, label: Portrait, component: image }
+      - name: education
+        label: Education
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Qualification, component: displayTitle }
+          - { name: detail, label: Details, type: string }
+      - name: certifications
+        label: Certifications
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Certificate, component: displayTitle }
+          - { name: issuer, label: Issuer, type: string }
+          - { name: url, label: Verification URL, component: httpsLink }
+          - { name: image, label: Certificate image, component: image }
+  - name: projects
+    label: Projects
+    type: collection
+    path: content/projects
+    format: json
+    filename: '{slug}.json'
+    subfolders: false
+    view:
+      fields: [title, status, featured, order]
+      sort: [order, title]
+      default: { sort: order, order: asc }
+    fields:
+      - { name: title, label: Project title, component: displayTitle }
+      - { name: slug, label: Public slug, component: slug }
+      - { name: summary, label: Summary, component: summary }
+      - { name: status, label: Status, type: select, required: true, default: In development, options: { values: [Built, In development, Planned, Archived] } }
+      - { name: category, label: Category, type: select, required: true, options: { values: [Software, Data, Agentic AI] } }
+      - { name: contribution, label: Contribution or current direction, type: text }
+      - { name: tools, label: Tools or areas of technical focus, type: string, list: true }
+      - { name: featured, label: Feature on homepage, type: boolean, default: false }
+      - { name: hidden, label: Hide this project and its page, type: boolean, default: false }
+      - { name: order, label: Display order, component: order }
+      - { name: cover, label: Cover image, component: image }
+      - { name: gallery, label: Project photos or screenshots, component: image, list: true }
+      - name: documents
+        label: Project documents (PDF)
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Document title, component: displayTitle }
+          - { name: src, label: PDF file, type: file, required: true, options: { media: project_documents } }
+      - name: sections
+        label: Additional sections
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Section heading, component: displayTitle }
+          - { name: body, label: Section text, type: text, required: true }
+      - { name: repository, label: Public repository URL, component: httpsLink }
+      - { name: website, label: Live website URL, component: httpsLink }
+      - { name: demo, label: Live demo URL, component: httpsLink }
+      - { name: documentation, label: Documentation URL, component: httpsLink }
+      - { name: video, label: Demo video URL, component: httpsLink }
+  - name: skills
+    label: Skills
+    type: file
+    path: content/skills.json
+    format: json
+    fields:
+      - { name: title, label: Page heading, component: displayTitle }
+      - { name: introduction, label: Introduction, type: text }
+      - name: groups
+        label: Skill groups
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Group name, component: displayTitle }
+          - name: items
+            label: Skills
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Skill name, component: displayTitle }
+              - { name: description, label: Description or project evidence, type: text }
+              - { name: project, label: Related project slug, type: string }
+  - name: writing
+    label: Writing page
+    type: file
+    path: content/writing.json
+    format: json
+    fields:
+      - { name: introduction, label: Introduction, type: text }
+      - { name: emptyMessage, label: Message when no articles are published, component: summary }
+  - name: articles
+    label: Articles
+    type: collection
+    path: content/articles
+    format: json
+    filename: '{slug}.json'
+    subfolders: false
+    view:
+      fields: [title, published, date]
+      sort: [date, title]
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, label: Article title, component: displayTitle }
+      - { name: slug, label: Public slug, component: slug }
+      - { name: summary, label: Summary, component: summary }
+      - { name: published, label: Publish article, type: boolean, default: false }
+      - { name: date, label: Publication date, type: date, default: '', options: { format: yyyy-MM-dd } }
+      - { name: cover, label: Cover image, component: image }
+      - name: blocks
+        label: Article content
+        type: object
+        list: true
+        fields:
+          - { name: kind, label: Content type, type: select, default: Paragraph, required: true, options: { values: [Paragraph, Heading, Image, Code, Link] } }
+          - { name: text, label: Text or code, type: text }
+          - { name: image, label: Article image, component: image }
+          - { name: url, label: Link destination, component: httpsLink }
+  - name: linkedin_posts
+    label: Featured LinkedIn posts
+    type: collection
+    path: content/linkedin
+    format: json
+    filename: '{primary}.json'
+    subfolders: false
+    view:
+      fields: [title, published, order]
+      sort: [order, title]
+      default: { sort: order, order: asc }
+    fields:
+      - { name: title, label: Card title, component: displayTitle }
+      - name: url
+        label: Original LinkedIn post URL
+        type: string
+        required: true
+        pattern: '^https://(www\.)?linkedin\.com/(posts/|feed/update/)[^\s]+$'
+      - { name: excerpt, label: Short excerpt or copied post text, type: text }
+      - { name: image, label: Cover image, component: image }
+      - name: photos
+        label: Additional photos
+        description: The card displays up to four distinct photos including the cover.
+        component: image
+        list: true
+      - { name: published, label: Show on homepage, type: boolean, default: false }
+      - { name: order, label: Display order, component: order }
