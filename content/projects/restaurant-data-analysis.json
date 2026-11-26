@@ -1,0 +1,16 @@
+{
+  "slug": "restaurant-data-analysis",
+  "title": "Restaurant Data Analysis",
+  "summary": "A notebook-based analysis of restaurant categories, price ranges, delivery availability, and customer votes.",
+  "status": "Built",
+  "category": "Data",
+  "featured": false,
+  "order": 60,
+  "contribution": "I used Python and pandas to explore a restaurant data set in notebooks. I grouped records by category and price range, compared delivery availability, and looked at how customer votes were distributed.",
+  "tools": [
+    "Python",
+    "pandas",
+    "Jupyter Notebook"
+  ],
+  "repository": "https://github.com/nithinsevella/Restaurant-Data-Analysis"
+}

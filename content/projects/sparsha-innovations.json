@@ -1,0 +1,16 @@
+{
+  "slug": "sparsha-innovations",
+  "title": "Sparsha Innovations",
+  "summary": "An electronics R&D website with product and project showcases, articles, enquiries, and content administration.",
+  "status": "Built",
+  "category": "Software",
+  "featured": false,
+  "order": 40,
+  "contribution": "I built the public pages for products, projects, and articles, as well as an enquiry form and an administration area for managing site content. I used Next.js for the frontend, NestJS for the API, and PostgreSQL with Prisma for structured content.",
+  "tools": [
+    "Next.js",
+    "NestJS",
+    "PostgreSQL",
+    "Prisma"
+  ]
+}

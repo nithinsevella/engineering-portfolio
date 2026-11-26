@@ -1,0 +1,20 @@
+{
+  "slug": "urbaneta-nyc",
+  "title": "UrbanETA-NYC",
+  "summary": "A machine learning model and interactive web app that estimate New York City taxi trip durations from pickup and drop-off details.",
+  "status": "Built",
+  "category": "Data",
+  "featured": false,
+  "order": 50,
+  "contribution": "I prepared features for pickup time, location clusters, and distances that account for the city grid. I compared regression baselines with XGBoost and deployed the chosen model as a Streamlit app, where visitors can enter trip details to get a duration estimate.",
+  "tools": [
+    "Python",
+    "pandas",
+    "NumPy",
+    "scikit-learn",
+    "XGBoost",
+    "Streamlit"
+  ],
+  "repository": "https://github.com/nithinsevella/UrbanETA-NYC",
+  "demo": "https://urban-eta-nyc.streamlit.app/"
+}

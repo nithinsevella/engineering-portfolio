@@ -1,0 +1,16 @@
+{
+  "headline": "Nithin Sevella",
+  "introduction": "I’m an engineering graduate in Hyderabad building projects in agentic AI. I’m exploring how AI systems retrieve information, use tools, and give people a way to review their work.",
+  "projectsTitle": "Agentic AI projects",
+  "projectsDescription": "Work in progress on knowledge retrieval, incident response, and workflow automation.",
+  "showProjects": true,
+  "showMoreProjects": true,
+  "moreProjectsTitle": "More projects",
+  "showLinkedIn": true,
+  "linkedinTitle": "Featured LinkedIn posts",
+  "heroImage": {
+    "src": "/media/working-by-the-window.jpg",
+    "alt": "A person seated by a window, looking down at an open notebook.",
+    "caption": "Illustrative image"
+  }
+}

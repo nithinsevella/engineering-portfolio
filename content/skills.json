@@ -1,0 +1,95 @@
+{
+  "title": "Skills",
+  "introduction": "Tools I’ve used in projects and topics I’m learning in AI engineering, cloud, and software systems.",
+  "groups": [
+    {
+      "title": "Data",
+      "items": [
+        {
+          "title": "Python and pandas",
+          "description": "Explored restaurant categories, prices, delivery availability, and votes in notebooks.",
+          "project": "restaurant-data-analysis"
+        },
+        {
+          "title": "Excel, SQL, Power BI, and Tableau",
+          "description": "Tools for working with data, querying records, and building visual summaries."
+        }
+      ]
+    },
+    {
+      "title": "Software",
+      "items": [
+        {
+          "title": "Web development",
+          "description": "Built the website and content administration for Sparsha Innovations using Next.js and NestJS.",
+          "project": "sparsha-innovations"
+        },
+        {
+          "title": "Databases",
+          "description": "Used PostgreSQL and Prisma to manage the site’s structured content.",
+          "project": "sparsha-innovations"
+        }
+      ]
+    },
+    {
+      "title": "Agentic AI and LLMs",
+      "items": [
+        {
+          "title": "Python and LLM backend development",
+          "description": "Learning to build Python APIs for language models, validate inputs, and handle structured responses."
+        },
+        {
+          "title": "Agent architecture and multi-agent systems",
+          "description": "Studying tool calling, orchestration, state, retries, and handoffs between agents or to a person."
+        },
+        {
+          "title": "Model Context Protocol (MCP) and Agent2Agent (A2A)",
+          "description": "Learning how MCP connects agents to tools and data and how A2A lets agents work together."
+        },
+        {
+          "title": "Retrieval-augmented generation (RAG) and evaluation",
+          "description": "Practising retrieval, citation checks, and ways to evaluate whether answers are grounded in their sources."
+        }
+      ]
+    },
+    {
+      "title": "Observability",
+      "items": [
+        {
+          "title": "Logs, metrics, and traces",
+          "description": "Learning to follow requests across services and understand latency, failures, and model behaviour."
+        },
+        {
+          "title": "Fiddler AI and Datadog",
+          "description": "Exploring Fiddler AI for model and LLM monitoring and Datadog for service observability."
+        }
+      ]
+    },
+    {
+      "title": "Cloud and delivery",
+      "items": [
+        {
+          "title": "Docker and CI/CD",
+          "description": "Practising container builds and automated checks, packaging, and deployments."
+        },
+        {
+          "title": "AWS and Microsoft Azure",
+          "description": "Learning deployment fundamentals, identity and access, and monitoring cloud resources."
+        }
+      ]
+    },
+    {
+      "title": "Systems and security",
+      "items": [
+        {
+          "title": "Distributed systems and system design",
+          "description": "Studying service boundaries, asynchronous work, failure handling, and design trade-offs."
+        },
+        {
+          "title": "Application and AI security",
+          "description": "Learning to protect secrets, scope tool permissions, and use human approval in sensitive workflows."
+        }
+      ]
+    }
+  ]
+}

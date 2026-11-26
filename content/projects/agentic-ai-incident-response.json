@@ -1,0 +1,16 @@
+{
+  "slug": "agentic-ai-incident-response",
+  "title": "Agentic AI Site Reliability and Incident Response Platform",
+  "summary": "An in-development project exploring how logs, metrics, and traces can be brought into an incident timeline for review.",
+  "status": "In development",
+  "category": "Agentic AI",
+  "featured": true,
+  "order": 20,
+  "contribution": "I’m exploring how to assemble signals from multiple sources into a timeline an engineer can review. The intended workflow would keep the original evidence available so that the engineer can check which events belong together.",
+  "tools": [
+    "Logs",
+    "Metrics",
+    "Distributed traces",
+    "Human review"
+  ]
+}

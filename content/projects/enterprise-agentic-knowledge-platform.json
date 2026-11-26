@@ -1,0 +1,16 @@
+{
+  "slug": "enterprise-agentic-knowledge-platform",
+  "title": "Enterprise Agentic Knowledge and Operations Platform",
+  "summary": "An in-development project exploring how to retrieve relevant documents and produce answers with citations for review.",
+  "status": "In development",
+  "category": "Agentic AI",
+  "featured": true,
+  "order": 10,
+  "contribution": "I’m exploring a workflow that retrieves relevant passages from a document collection and uses them to draft a cited answer. A reviewer would be able to trace claims back to the source passages and flag gaps in the evidence.",
+  "tools": [
+    "Document retrieval",
+    "Language models",
+    "Source citations",
+    "Human review"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Nithin Sevella",
+  "location": "Hyderabad, India",
+  "email": "nithinsevella8@gmail.com",
+  "description": "Nithin Sevella’s engineering portfolio covering agentic AI, software development, machine learning, and data analysis.",
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "writing": "Writing",
+    "contact": "Contact"
+  },
+  "profiles": {
+    "linkedin": "",
+    "github": "",
+    "naukri": "",
+    "workAtAStartup": "",
+    "additional": []
+  },
+  "contactHeading": "Let’s talk.",
+  "contactDescription": "I’m open to entry-level roles in software, data, and agentic AI."
+}

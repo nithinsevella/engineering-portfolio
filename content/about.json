@@ -1,0 +1,24 @@
+{
+  "title": "About me",
+  "introduction": "I’m Nithin Sevella, an engineering graduate based in Hyderabad, India. I finished my B.Tech in 2025 and went on to train in AI and data analytics at Tech Mahindra SMART Academy.",
+  "direction": "My projects so far include an electronics R&D website, a restaurant data analysis, and a taxi trip duration predictor. I’m now using what I learned from those projects to explore how AI systems retrieve information and use tools.",
+  "education": [
+    {
+      "title": "Bachelor of Technology",
+      "detail": "Completed in 2025"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "AI Data Analyst",
+      "issuer": "Tech Mahindra SMART Academy"
+    },
+    {
+      "title": "Introduction to Data Science",
+      "issuer": "Cisco Networking Academy"
+    }
+  ],
+  "learning": "I learn by building a small version of a project first. I start with a question or workflow, implement one piece at a time, and test it with examples. When something fails, I trace where it went wrong and write down what I’d change.",
+  "nextSteps": "I’m developing three agentic AI projects. My next steps are to test whether answers cite the right sources, see how logs and traces help explain incidents, and work out where automated workflows need a person’s approval.",
+  "roles": "I’m looking for my first technical role in software development, data analytics, or AI engineering. I’m especially interested in building Python or web applications, working with data, and helping test AI workflows."
+}

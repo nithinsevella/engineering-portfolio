@@ -1,0 +1,16 @@
+{
+  "slug": "autonomous-business-workflow",
+  "title": "Autonomous Business Workflow Platform",
+  "summary": "An in-development project exploring task planning, tool use, approvals, and retries in business workflows.",
+  "status": "In development",
+  "category": "Agentic AI",
+  "featured": true,
+  "order": 30,
+  "contribution": "I’m exploring how an agent could turn a request into steps, use tools for individual tasks, and pause for approval before proceeding. I’m also looking at how a workflow could retry a failed step while keeping its progress reviewable.",
+  "tools": [
+    "Workflow orchestration",
+    "Tool calling",
+    "Approval steps",
+    "Retries"
+  ]
+}
